@@ -22,7 +22,6 @@ function getDay()
             }
         }
     }
-    var_dump($dayArray);
     return $dayArray;
 
 }
