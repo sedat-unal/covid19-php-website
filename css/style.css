@@ -29,9 +29,8 @@ img{max-width:100%;}
 /*end reset*/
 body {
 	font-family: 'Raleway', sans-serif;
-
-	/*background: url("../images/1.jpg") no-repeat 0px 0px;
-	background-size: cover;*/
+    background: url("../images/1.jpg") no-repeat 0px 0px;
+	background-size: cover;
 }
 /*--header--*/
 .header-w3l {

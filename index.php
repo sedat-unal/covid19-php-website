@@ -1,4 +1,5 @@
 <?php
+
 function getDay()
 {
     $day = date("d");
@@ -8,6 +9,19 @@ function getDay()
         2 => $day - 01,
         3 => $day
     );
+    // i dont know why but i have to do that search it
+    if($dayArray[0] < 10){
+        $dayArray[0] = "0" . $dayArray[0];
+        if($dayArray[1] < 10){
+            $dayArray[1] = "0" . $dayArray[1];
+            if ($dayArray[2] < 10){
+                $dayArray[2] = "0" . $dayArray[2];
+                if ($dayArray[3] < 10){
+                    $dayArray[3] = "0" . $dayArray[3];
+                }
+            }
+        }
+    }
     var_dump($dayArray);
     return $dayArray;
 
@@ -81,14 +95,17 @@ for ($i = 0; $i < count($gun); $i++) {
     </div>
     <!--//header-->
     <!--main-->
-
-    <!-- pricing plans -->
     <div class="pricing">
         <div class="w3l-pricing-grids">
             <div class="agileits-pricing-grid fourth">
                 <div class="pricing_grid">
                     <div class="wthree-pricing-info pricing-top yellow-top">
-                        <h3><?php echo $cases[3]["date"]; ?></h3>
+                        <h3><?php
+                            if($cases[3] != NULL){
+                                echo $cases[3]["date"];
+                            }
+                            ?>
+                        </h3>
                         <span>Today</span>
                     </div>
                     <div class="pricing-bottom">
@@ -182,33 +199,12 @@ for ($i = 0; $i < count($gun); $i++) {
 
         </div>
     </div>
-    <!-- //pricing plans -->
     <!--//main-->
     <!--footer-->
     <div class="footer">
         <p>&copy; 2020 Sedat Ünal | The Source is <a href="https://covid19.saglik.gov.tr/"><u>Republic Of Turkish Ministry</u></a></p>
     </div>
     <!--//footer-->
-
-    <!--pop-up-grid-->
-    <div id="popup">
-        <div id="small-dialog" class="mfp-hide">
-            <div class="signin-form profile">
-                <h3>Register Here</h3>
-                <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="Username" required="">
-                        <input type="email" name="email" placeholder="E-mail" required="">
-                        <input type="text" name="Number" placeholder="Contact Number" required="">
-                        <input type="password" name="password" placeholder="Password" required="">
-                        <input type="password" name="password" placeholder="Confirm Password" required="">
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--pop-up-grid-->
 
     <!-- jquery -->
     <script src="js/jquery-2.1.4.min.js"></script>
